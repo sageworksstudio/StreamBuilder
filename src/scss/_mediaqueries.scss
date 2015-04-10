@@ -1,0 +1,83 @@
+/* media queries */
+@media (max-width: 106.25rem) {
+    .wrapper,
+    .separator {
+        font-size: 1.6875rem;
+    }
+}
+
+@media (max-width: 93.75rem) {
+    .content,
+    .separator {
+        font-size: 1.5rem;
+    }
+    .right {
+        padding: 1.618em 4.854em 1.618em 50%;
+    }
+    .left {
+        padding: 1.618em 50% 1.618em 4.854em;
+    }
+}
+
+@media (max-width: 81.25rem) {
+    .content,
+    .separator {
+        font-size: 1.3125rem;
+    }
+    .right {
+        padding: 1.618em 3.236em 1.618em 45%;
+        background-size: 44% auto;
+        background-position: 0 55%;
+    }
+    .left {
+        padding: 1.618em 45% 1.618em 3.236em;
+        background-size: 44% auto;
+        background-position: 100% 55%;
+    }
+}
+
+@media (max-width: 68.75rem) {
+    .content,
+    .separator {
+        font-size: 1.125rem;
+    }
+    .right {
+        padding: 1.618em 3.236em 1.618em 40%;
+        background-size: 39% auto;
+        background-position: 0 60%;
+    }
+    .left {
+        padding: 1.618em 40% 1.618em 3.236em;
+        background-size: 39% auto;
+        background-position: 100% 60%;
+    }
+}
+
+@media (max-width: 50rem) {
+    .content .smallscreen {
+        display: block;
+    }
+    .right {
+        padding: 1.618em 3.236em;
+        background-image: none;
+    }
+    .left {
+        padding: 1.618em 3.236em;
+        background-image: none;
+    }
+}
+
+@media (max-width: 31.25rem) {
+    .right {
+        padding: 1.618em 1.618em;
+    }
+    .left {
+        padding: 1.618em 1.618em;
+    }
+}
+
+@media (max-width: 12rem) {
+    html {
+        min-width: 12rem;
+    }
+}

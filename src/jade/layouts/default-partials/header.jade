@@ -1,0 +1,11 @@
+header.header
+    img(src='img/logo.gif')
+    nav.nav
+        ul
+            - each nav in PrimaryNav
+                - if (currentPage === nav.link)
+                    li(class='#{nav.link}').active
+                        a(href='\##{nav.link}') #{nav.title}
+                - else
+                    li(class="#{nav.link}")
+                        a(href='\##{nav.link}') #{nav.title}

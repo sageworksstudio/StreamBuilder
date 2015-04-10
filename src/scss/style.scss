@@ -1,0 +1,106 @@
+@import "_variables-mixins";
+@import "_typography";
+
+
+body {
+    color: #efefef;
+    margin: 0 auto;
+}
+
+header.header {
+    background-color: #000;
+    display: block;
+    height: 100px;
+    padding: 0;
+    img {
+        float: left;
+    }
+    nav.nav {
+        ul {
+            float: right;
+            list-style-type: none;
+            margin: 30px 30px 0 0;
+            li {
+                float: left;
+                margin-left: 20px;
+            }
+        }
+    }
+}
+
+.content {
+    font-size: 1.875rem;
+    background-size: 49% auto;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    .smallscreen {
+        display: none;
+    }
+}
+
+.right {
+    padding: 1.618em 6.472em 3.236em 50%;
+    background-position: 0 50%;
+}
+
+.left {
+    padding: 1.618em 50% 3.236em 6.472em;
+    background-position: 100% 50%;
+}
+
+.illustration_01,
+.illustration_03 {
+    background-color: #666;
+    background-image: url("../img/white-rooster.png");
+}
+
+.illustration_02,
+.illustration_04 {
+    background-color: #ccc;
+    background-image: url("../img/black-rooster.png");
+    color: #666;
+}
+
+.separator {
+    font-size: 1.875rem;
+    padding: 1.618em 0;
+    text-align: center;
+}
+
+footer.footer {
+    padding: 25px 0;
+    p {
+        float: left;
+    }
+    nav.nav {
+        ul {
+            list-style-type: none;
+            margin: 0;
+            li {
+                float: left;
+                margin-right: 20px;
+            }
+        }
+    }
+    .goTop {
+        background-color: rgba(0,0,0,.3);
+        bottom: 2em;
+        border: 1px #333 solid;
+        border-radius: 4px;
+        color: #fff;
+        display: none;
+        padding: 10px;
+        position: fixed;
+        right: 2em;
+        text-decoration: none;
+        &:hover {
+            background-color: rgba(0,0,0,.6);
+        }
+    }
+}
+
+@import "_mediaqueries";

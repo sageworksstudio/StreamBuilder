@@ -1,0 +1,17 @@
+extends layouts/default
+
+append mainVars
+    - currentPage = 'index'
+    - pageTitle = 'This is the title'
+    - metaDesc = 'This is the page description.'
+
+block content
+    each part in PageSections
+        if(part.sectionheader)
+            div.separator
+                h2 #{part.sectionheader}
+        div(class=part.style)
+            a(name=part.anchor)
+            figure(class="smallscreen")
+                img(src=part.smallimage alt=part.alttext)
+            != part.thecontent
