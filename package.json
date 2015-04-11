@@ -1,5 +1,5 @@
 {
-    "name": "HTMLBuilder",
+    "name": "StreamBuilder",
     "version": "0.1.0",
     "description": "Streaming, front-end build environment for automating mundane tasks.",
     "keywords": [
@@ -11,16 +11,16 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/prawnstar/htmlbuilder"
+        "url": "https://github.com/prawnstar/streambuilder"
     },
     "author": {
         "name": "Chris Brown",
         "email": "chris@prawnstar.net",
         "url": "http://prawnstar.net"
     },
-    "homepage": "https://github.com/prawnstar/htmlbuilder",
+    "homepage": "https://github.com/prawnstar/streambuilder",
     "bugs": {
-        "url": "https://github.com/prawnstar/htmlbuilder/issues",
+        "url": "https://github.com/prawnstar/streambuilder/issues",
         "email": "chris@prawnstar.net"
     },
     "license": "MIT",
