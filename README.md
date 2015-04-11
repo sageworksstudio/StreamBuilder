@@ -1,7 +1,7 @@
 # StreamBuilder
-Streaming, front-end build tool for automating mundane tasks like minification and uglification. It even refreshes your browser for you.
-
 ##What it is
+Streaming, front-end build tool (using the Gulp streaming build system) for automating mundane tasks like minification and uglification. It even refreshes your browser for you.
+
 *__StreamBuilder focuses on four tasks to make your job easier.__*
 
 1. Compile SCSS into minified CSS.
@@ -20,7 +20,7 @@ Note: if you run GNU/Linux you can now get the most recent version of Node with 
 
 ##Getting Started
 1. Download this repo to your development environment.
-2. Optionally - You may need to install the node modules listed in the package.json file globally if your project is not in your executable path. I.e., `sudo npm install -g <node_module>`
+2. Install the node modules listed in the package.json file globally. I.e., `sudo npm install -g <node_module>`
 3. From a terminal `cd path/to/streambuilder`
 4. `npm update` This will create a new directory "node_modules" where NPM will install all the required node modules.
 5. `gulp`
