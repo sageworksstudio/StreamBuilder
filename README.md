@@ -2,8 +2,16 @@
 Streaming, front-end build tool for automating mundane tasks like minification and uglification. It even refreshes your browser for you.
 
 ##What it is
-The basic idea of StreamBuilder is to automate the building process so you can focus on actually building your app. StreamBuilder's workflow goes like this:
-You work from the /src directory and everytime you save a file; be it SCSS, JavaScript or Jade templates, StreamBuilder compiles SCSS into CSS, minifies JavaScripts and compiles Jade templates to HTML and places the compiled files in the /dist directory. Additionally, StreamBuilder will listen on port 3000 of your localhost environment. So if you have a browser open to the projet (example: http://localhost:3000/streambuilder/dist) StreamBuilder will even refresh your browser for you as you make changes to your source files.
+*__StreamBuilder focuses on four tasks to make your job easier.__*
+
+1. Compile SCSS into minified CSS.
+2. Minify JavaScript.
+3. Allow HTML to be templatized so thing slike headers, footers and common include items can be more easily maintained.
+4. Refresh your browser for you as you make changes to your source files. StreamBuilder will create a proxy server and listen on port 3000 of your localhost environment (example: http://localhost:3000/streambuilder/dist).
+
+*__StreamBuilder's workflow__*
+
+You work from the /src directory and everytime you save a file; be it SCSS, JavaScript or Jade templates, StreamBuilder compiles SCSS into CSS, minifies JavaScripts and compiles Jade templates to HTML and places the compiled files in the /dist directory.
 
 ##Requirements
 Requires [Nodejs](https://nodejs.org/)
@@ -12,9 +20,10 @@ Note: if you run GNU/Linux you can now get the most recent version of Node with 
 
 ##Getting Started
 1. Download this repo to your development environment.
-2. From a terminal `cd path/to/streambuilder`
-3. `npm update` This will create a new directory "node_modules" where NPM will install all the required node modules.
-4. `gulp`
+2. Optionally - You may need to install the node modules listed in the package.json file globally if your project is not in your executable path. I.e., `sudo npm install -g <node_module>`
+3. From a terminal `cd path/to/streambuilder`
+4. `npm update` This will create a new directory "node_modules" where NPM will install all the required node modules.
+5. `gulp`
 
 ## Advanced configuration
 You can change anything and everything about StreamBuilder by editing the gulpfile.js. By default StreamBuilder compiles everything to the /dist folder. You can chage this behavior (as well as the URL of the project) by editing the `conf_xyz_dest` vars in the top of gulpfile.js.
