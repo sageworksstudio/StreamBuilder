@@ -1,12 +1,12 @@
 # StreamBuilder
 ##What it is
-Streaming, front-end build tool (using the Gulp streaming build system) for automating mundane tasks like minification and uglification. It even refreshes your browser for you.
+StreamBuilder is an automated build environment well suited for HTML, CSS and JavaScript prototyping. It runs on the (streaming) build system gulp.js. It uses the Jade template language to modularize html into templates, allowing developers to take a DRY approach to front-end development. Also included is the Sass CSS extension language.
 
 *__StreamBuilder focuses on four tasks to make your job easier.__*
 
 1. Compile SCSS into minified CSS.
 2. Minify JavaScript.
-3. Allow HTML to be templatized so thing slike headers, footers and common include items can be more easily maintained.
+3. Allow HTML to be templatized so things like headers, footers and common include items can be more easily maintained.
 4. Refresh your browser for you as you make changes to your source files. StreamBuilder will create a proxy server and listen on port 3000 of your localhost environment (example: http://localhost:3000/streambuilder/dist).
 
 *__StreamBuilder's workflow__*
