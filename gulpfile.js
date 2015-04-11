@@ -1,10 +1,11 @@
 var /* BEGIN ENVIRONMENT CONFIG */
-    conf_bower_dest     = './dist/bower_components',
-    conf_image_dest     = './dist/img',
-    conf_script_dest    = './dist/js',
-    conf_style_dest     = './dist/css',
-    conf_template_dest  = './dist',
-    conf_url            = 'localhost/htmlbuilder/dist',
+    conf_bower_dest     = './dist/bower_components',        // where to output the bower directory
+    conf_image_dest     = './dist/img',                     // where to output images
+    conf_output_dest    = './dist',                         // the base output directory
+    conf_script_dest    = './dist/js',                      // where to output scripts
+    conf_style_dest     = './dist/css',                     // where to output styles
+    conf_template_dest  = './dist',                         // where to output html templates
+    conf_url_dest       = 'localhost/streambuilder/dist',   // the local URL of the project
     /* END ENVIRONMENT CONFIG */
 
     browsersync         = require('browser-sync'),
@@ -36,7 +37,7 @@ process.argv.forEach(function (val) {
  * Remove dist directory.
  */
 gulp.task('clean', function (cb) {
-    rimraf('./dist', cb);
+    rimraf(conf_output_dest, cb);
 });
 
 
@@ -108,7 +109,7 @@ gulp.task('build', ['style', 'templates', 'images', 'bower', 'scripts']);
  */
 gulp.task('watch', ['build'], function () {
     browsersync({
-        proxy: conf_url
+        proxy: conf_url_dest
     });
     gulp.watch('./src/scss/*.scss', ['style']);
     gulp.watch('./src/jade/**/*.jade', ['templates']);
