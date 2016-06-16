@@ -1,4 +1,7 @@
 # StreamBuilder
+
+_WARNING: This documentation is out of date. New docs coming in the next 24-48 hours. (June 16th, 2016)
+
 ##What it is
 StreamBuilder is an automated build environment well suited for HTML, CSS and JavaScript prototyping. It runs on the (streaming) build system gulp.js. It uses the Jade template language to modularize html into templates, allowing developers to take a DRY approach to front-end development. Also included is the Sass CSS extension language.
 

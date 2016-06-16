@@ -1,0 +1,56 @@
+/* Breakpoints based on defined $breakpoint-map */
+@mixin respond($breakpoint) {
+    @if map-has-key($breakpoint-map, $breakpoint) {
+        @media #{inspect(map-get($breakpoint-map, $breakpoint))} {
+            @content;
+        }
+    }
+    @else {
+        @warn "Unfortunately, you have not set `#{$breakpoint}` as a valid breakpoint. "
+            + "Make sure `#{$breakpoint}` is defined in `$breakpoints-map` in the `_settings.scss` file.";
+    }
+}
+
+@function colWidth($fraction) {
+    @return $fraction * 100%;
+}
+
+@include respond(xs) {
+    @for $i from 1 through 12 {
+        .col-xs-#{$i}  {
+            width: colWidth($i/12);
+        }
+    }
+}
+
+@include respond(sm) {
+    @for $i from 1 through 12 {
+        .col-sm-#{$i}  {
+            width: colWidth($i/12);
+        }
+    }
+}
+
+@include respond(md) {
+    @for $i from 1 through 12 {
+        .col-md-#{$i}  {
+            width: colWidth($i/12);
+        }
+    }
+}
+
+@include respond(lg) {
+    @for $i from 1 through 12 {
+        .col-lg-#{$i}  {
+            width: colWidth($i/12);
+        }
+    }
+}
+
+@include respond(xl) {
+    @for $i from 1 through 12 {
+        .col-xl-#{$i}  {
+            width: colWidth($i/12);
+        }
+    }
+}

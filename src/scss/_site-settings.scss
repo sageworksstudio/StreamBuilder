@@ -1,0 +1,17 @@
+/**
+ * - - - - [ Grid & Breakpoints - used with the column grid ]
+ */
+$container          : 1200px;                       // Max width of grid.
+$row                : 100%;                         // Max width of row.
+$gutter             : 0;                            // Gutter width. Will be /2 for each col.
+
+/**
+ * Note: breakpoints are set to be that size and up.
+ */
+$breakpoint-map: (
+    'xs'            : ( min-width: 0px ),           // XSmall up to Small.
+    'sm'            : ( min-width: 480px ),         // Small up to Medium.
+    'md'            : ( min-width: 768px ),         // Medium up to Large.
+    'lg'            : ( min-width: 960px ),         // Large up to X-Large.
+    'xl'            : ( min-width: $container )     // X-Large and above.
+);

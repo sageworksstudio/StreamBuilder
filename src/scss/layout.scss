@@ -1,0 +1,66 @@
+@import "site-settings";                        // <-- Edit this file for columns and breakpoints
+
+@import "components/columns-grid-mixin";        // Columns based grid
+@import "components/percentage-grid-mixin";     // Percent based grid
+@import "components/floatingPoint-grid-mixin";  // Float-point based grid
+@import "components/responsive-breakpoints";    // Adds responsive breakpoints
+
+
+
+
+/* - - - - - - - - - - Put XSmall up-to Small Styles Here - - - - - - - - - - */
+
+
+
+
+
+
+
+
+/* - - - - - - - - - - Responsive Breakpoint Styles Here - - - - - - - - - - */
+/* Small devices and larger */
+@include respond(sm) {
+
+}
+
+/* Medium devices and larger */
+@include respond(md) {
+
+}
+
+/* Large devices and larger */
+@include respond(lg) {
+
+}
+
+/* XLarge devices and larger */
+@include respond(xl) {
+
+}
+
+
+
+
+
+/* - - - - - - - - - - BEGIN DEMO Styles - - - - - - - - - - */
+.blue-colp-fixed {
+    color: #efefef;
+    background: #58BEE0;
+    @include colp(.25);
+}
+.red-colp-fixed {
+    color: #efefef;
+    background: #E05858;
+    @include colp(.75);
+}
+.blue-colu-fixed {
+    color: #efefef;
+    background: #58BEE0;
+    @include colu(2.4, 7);
+}
+.red-colu-fixed {
+    color: #efefef;
+    background: #E05858;
+    @include colu(4.6, 7);
+}
+/* - - - - - - - - - - END DEMO Styles - - - - - - - - - - */

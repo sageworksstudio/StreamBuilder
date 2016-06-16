@@ -1,0 +1,5 @@
+/* Column based on known percentages */
+@mixin colp($percentage, $float-direction:left) {
+    width: 100% * $percentage;
+    float: $float-direction;
+}

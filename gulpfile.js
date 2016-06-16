@@ -1,95 +1,57 @@
 var /* BEGIN ENVIRONMENT CONFIG */
-    conf_bower_dest     = './dist/bower_components',        // where to output the bower directory
     conf_image_dest     = './dist/img',                     // where to output images
     conf_output_dest    = './dist',                         // the base output directory
     conf_script_dest    = './dist/js',                      // where to output scripts
     conf_style_dest     = './dist/css',                     // where to output styles
     conf_template_dest  = './dist',                         // where to output html templates
-    conf_url_dest       = 'localhost/streambuilder/dist',   // the local URL of the project
+    conf_url_dest       = 'http://localhost/StreamBuilder/dist',   // the local URL of the project
     /* END ENVIRONMENT CONFIG */
 
     browsersync         = require('browser-sync'),
     changed             = require('gulp-changed'),
-    clean               = false,
-    database            = require('./src/db/database.json'),
     gulp                = require('gulp'),
-    gulpif              = require('gulp-if'),
     gulputil            = require('gulp-util'),
-    jade                = require('gulp-jade'),
+    gulpwatch           = require('gulp-watch'), // gulp-watch is not the same as gulp.watch !
     path                = require('path'),
     reload              = browsersync.reload,
-    rimraf              = require('rimraf'),
     sass                = require('gulp-sass'),
     uglify              = require('gulp-uglify');
 
-
 /**
- * Check to see if --vars were set.
- */
-process.argv.forEach(function (val) {
-    if (val === '--clean') {
-        clean = true;
-    }
-});
-
-
-/**
- * Remove dist directory.
- */
-gulp.task('clean', function (cb) {
-    rimraf(conf_output_dest, cb);
-});
-
-
-/**
- * Compile scss as compressed css.
+ * Compile scss as compressed css
  */
 gulp.task('style', function () {
-    return gulp.src('./src/scss/*.scss')
+    return gulp.src('./src/scss/layout.scss')
         .pipe(changed(conf_style_dest))
         .pipe(sass({'outputStyle': 'compressed'}))
         .pipe(gulp.dest(conf_style_dest))
         .pipe(reload({stream:true}));
 });
 
-
 /**
- * Jade to html.
+ * HTML
+ * If the destination file has been changed, reload the page.
  */
 gulp.task('templates', function () {
-    return gulp.src('./src/jade/*.jade')
-        .pipe(jade({
-            'pretty': true,
-            'locals': database
-        }))
-        .pipe(gulp.dest(conf_template_dest))
+    return gulp.src('./src/html/**')
+        .pipe(gulp.dest(conf_output_dest))
         .pipe(reload({stream:true}));
 });
-
 
 /**
  * Move images.
  */
 gulp.task('images', function () {
-    gulp.src('./src/img/**')
-        .pipe(gulp.dest(conf_image_dest));
+    return gulp.src('./src/img/**')
+        .pipe(gulp.dest(conf_image_dest))
+        .pipe(reload({stream:true}));
 });
-
-
-/**
- * Move bower components.
- */
-gulp.task('bower', function () {
-    gulp.src('./src/bower_components/**')
-        .pipe(gulp.dest(conf_bower_dest));
-});
-
 
 /**
  * Compress javascript.
  */
 gulp.task('scripts', function () {
-    return gulp.src('./src/js/*.js')
+    return gulp.src('./src/js/**')
         .pipe(changed(conf_script_dest))
         .pipe(uglify())
         .pipe(gulp.dest(conf_script_dest))
@@ -97,36 +59,38 @@ gulp.task('scripts', function () {
 
 });
 
+/**
+ * Start a proxy server
+ */
+gulp.task('server', function() {
+    browsersync({proxy: conf_url_dest});
+})
 
 /**
- * All build tasks.
+ * Watch for changed files
  */
-gulp.task('build', ['style', 'templates', 'images', 'bower', 'scripts']);
-
-
-/**
- * Watch for chaned files
- */
-gulp.task('watch', ['build'], function () {
-    browsersync({
-        proxy: conf_url_dest
+gulp.task('watch', function () {
+    // watch for files that were changed
+    gulp.watch('./src/scss/**/*.scss', ['style']);
+    gulp.watch('./src/html/**/*.html', ['templates']);
+    gulp.watch('./src/js/**/*.js', ['scripts']);
+    // watch for files that are added
+    gulpwatch('./src/img/**', function () {
+        gulp.src('./src/img/**')
+        .pipe(gulp.dest(conf_image_dest))
+        .pipe(reload({stream:true}));
     });
-    gulp.watch('./src/scss/*.scss', ['style']);
-    gulp.watch('./src/jade/**/*.jade', ['templates']);
-    gulp.watch('./src/js/*.js', ['scripts']);
-    gulp.watch('./src/db/database.json', ['clean', 'build']);
-    gulp.watch('./dist/*html').on('change', reload);
+    gulpwatch('./src/js/**', function () {
+        gulp.src('./src/js/**')
+        .pipe(gulp.dest(conf_script_dest))
+        .pipe(reload({stream:true}));
+    });
     gulputil.log(gulputil.colors.inverse("Shazam! We're up and running."));
 });
-
 
 /**
  * Default task
  */
-gulp.task('default', function () {
-    if (clean === true) {
-        gulp.start(['clean']);
-    } else {
-        gulp.start(['watch']);
-    }
+gulp.task('default', ['style', 'templates', 'images', 'scripts', 'server', 'watch'], function () {
+    // Start all tasks
 });
