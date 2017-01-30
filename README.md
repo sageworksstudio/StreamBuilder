@@ -8,7 +8,7 @@ StreamBuilder is an automated build environment well suited for HTML, CSS and Ja
 1. Compile SCSS into minified CSS.
 2. Minify JavaScript.
 3. Move your html/css/JavaScripts and images from the source (working) folder, to the destination folder.
-4. Refresh your browser for you as you make changes to your source files. StreamBuilder will create a proxy server and listen on port 3000 of your localhost environment (example: http://localhost:3000/streambuilder/dist).
+4. Refresh your browser for you as you make changes to your source files. StreamBuilder will create a proxy server and listen on port 3000 of your localhost environment (example: http://localhost:3000/StreamBuilder/dist).
 
 *__StreamBuilder's workflow__*
 
@@ -24,6 +24,7 @@ Note: if you run GNU/Linux you can now get the most recent version of Node with 
 2. Install the node modules listed in the package.json file globally. I.e., `sudo npm install -g <node_module>`
 3. From a terminal `cd path/to/streambuilder`
 4. `npm update` This will create a new directory "node_modules" where NPM will install all the required node modules.
+5. Edit the config.json file to reflect your destination URL.
 5. Run `gulp`
 
 ## Advanced configuration

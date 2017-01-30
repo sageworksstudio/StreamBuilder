@@ -16,8 +16,11 @@
 
 
 
-
 /* - - - - - - - - - - Responsive Breakpoint Styles Here - - - - - - - - - - */
+/* XSmall devices and larger */
+@include respond(xs) {
+
+}
 /* Small devices and larger */
 @include respond(sm) {
 
@@ -37,30 +40,3 @@
 @include respond(xl) {
 
 }
-
-
-
-
-
-/* - - - - - - - - - - BEGIN DEMO Styles - - - - - - - - - - */
-.blue-colp-fixed {
-    color: #efefef;
-    background: #58BEE0;
-    @include colp(.25);
-}
-.red-colp-fixed {
-    color: #efefef;
-    background: #E05858;
-    @include colp(.75);
-}
-.blue-colu-fixed {
-    color: #efefef;
-    background: #58BEE0;
-    @include colu(2.4, 7);
-}
-.red-colu-fixed {
-    color: #efefef;
-    background: #E05858;
-    @include colu(4.6, 7);
-}
-/* - - - - - - - - - - END DEMO Styles - - - - - - - - - - */
