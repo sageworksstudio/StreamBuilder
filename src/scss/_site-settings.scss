@@ -1,17 +1,20 @@
-/**
- * - - - - [ Grid & Breakpoints - used with the column grid ]
- */
-$container          : 1200px;                       // Max width of grid.
-$row                : 100%;                         // Max width of row.
-$gutter             : 0;                            // Gutter width. Will be /2 for each col.
+/* Box Model */
+$box-sizing  : border-box; // box model
 
-/**
- * Note: breakpoints are set to be that size and up.
- */
-$breakpoint-map: (
-    'xs'            : ( min-width: 0px ),           // XSmall up to Small.
-    'sm'            : ( min-width: 480px ),         // Small up to Medium.
-    'md'            : ( min-width: 768px ),         // Medium up to Large.
-    'lg'            : ( min-width: 960px ),         // Large up to X-Large.
-    'xl'            : ( min-width: $container )     // X-Large and above.
+$container   : 1024px;
+
+$rem-base    : 18px;       // Default font size
+
+$font-step   : 0.33333;    // Font size increments = ($rem-base * $font-step)
+
+/* Grid */
+$gutter   : 30;
+$columns  : 12;
+$breakpoint-map : (
+    xs  : 'only screen and (min-width: 0px   )',
+    sm  : 'only screen and (min-width: 480px )',
+    md  : 'only screen and (min-width: 640px )',
+    ml  : 'only screen and (min-width: 768px )',
+    lg  : 'only screen and (min-width: 960px )',
+    xl  : 'only screen and (min-width: 1024px)'
 );

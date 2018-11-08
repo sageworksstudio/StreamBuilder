@@ -1,0 +1,50 @@
+/**
+ *
+ * @mixin simple-grid();
+ *
+ * A very basic grid for very basic grid needs. Intended to replace float grids.
+ * 
+ * Takes 5 arguements:
+ * $cols    Columns, can be any value 'grid-template-columns' accepts. Default: 1fr
+ * $rows    Rows, can be any value 'grid-auto-rows' allows. Default: auto
+                NOTE: 'auto' will cause all cells, in all rows, to be equal height
+ * $gutter  Gutter, can be any value 'gap' allows. Default: 1rem
+ * $margin  Margin, the outer margin of the grid. Can be any value(s) 'margin' accepts. Default: 0
+ * $width   Width, can be any value 'width' allows. Default: 100%
+ *
+ * Example: simple-grid(1fr 1fr 1fr, auto, 5px, 1em, 768px)
+ *
+ */
+@mixin simple-grid(
+    $cols:1fr,
+    $rows:auto,
+    $gutter:1rem,
+    $margin:0,
+    $width:100%) {
+        display: grid;
+        grid-template-columns: $cols;
+        grid-auto-rows: $rows;
+        gap: $gutter;
+        margin: $margin;
+        max-width: $width;
+    }
+
+/**
+ *
+ * @mixin simple-flex();
+ *
+ * A very basic flex container to align elements in a box.
+ *
+ * $align   Vertical alignment, accepts any value 'align-items' accepts. Default: center
+ * $justify Horizontal alignment, accepts any value 'justify-content' accepts. Default: center
+ *
+ * Example: simple-flex(center, center)
+ *
+ */
+@mixin simple-flex(
+    $align:center,
+    $justify:center) {
+        display: flex;
+        align-items: $align;
+        justify-content: $justify;
+    }
