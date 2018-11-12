@@ -25,6 +25,10 @@ Requires [Nodejs](https://nodejs.org/)
 - Edit the paths variable in the `gulpfile.js` file to reflect your `src` and `dest` paths as well as your application URL.
 - Run `gulp`
 
+## Production mode
+
+By default StreamBuilder runs in development mode and outputs uncompressed CSS and JavaScript. To output compressed files you can run StreamBuilder in production mode. `gulp production` Production mode will not start a server nor will it watch for any changes.
+
 ## Advanced configuration
 You can change anything and everything about StreamBuilder by editing the gulpfile.js. By default StreamBuilder compiles everything to the /dest folder. You can chage this behavior (as well as the URL of the project) by editing the `paths` vars in the top of gulpfile.js.
 
