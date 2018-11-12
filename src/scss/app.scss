@@ -1,0 +1,44 @@
+@import "settings";                 // <-- Set sitewide defaults
+@import "components/mixins";        // Goodies!
+
+/* Demo */
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: $rem-base;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 400;
+}
+
+h1 {
+    @include remCalc(4.5);
+}
+
+h1 {
+    @include remCalc(4);
+}
+
+h3 {
+    @include remCalc(3.5);
+}
+
+h4 {
+    @include remCalc(3);
+}
+
+section {
+    @include simple-grid(1fr, auto, 5px, 1em auto, 640px);
+    > div {
+        @include simple-flex(center, center);
+        border: 1px $primary-color solid;
+    }
+}
+
+@media (min-width: 768px) {
+    section {
+        @include simple-grid(1fr 1fr 1fr, auto, 5px, 1em auto, 1024px);
+
+    }
+}

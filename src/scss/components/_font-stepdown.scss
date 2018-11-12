@@ -1,4 +1,0 @@
-/* Calculate font size based on defined $font-step variable */
-@mixin remCalc($n) {
-    font-size: $n * $font-step + rem;
-}

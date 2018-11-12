@@ -48,3 +48,20 @@
         align-items: $align;
         justify-content: $justify;
     }
+
+/**
+ * @mixin remCalc();
+ * 
+ * Calculate font size based on defined $rem-base and $font-step variable in _settings.scss
+ *
+ * Takes one argument. The number you want to multiple by $font-step
+ *
+ * $n   Any number of floating point number.
+ *
+ * Example: remCalc(4.5);
+ * If the font rem size was set to 16px, this will produce: font-size: 1.5rem; (calculated 24px)
+ * (4.5 * .33333 = 1.5)
+ */
+@mixin remCalc($n) {
+    font-size: $n * $font-step + rem;
+}

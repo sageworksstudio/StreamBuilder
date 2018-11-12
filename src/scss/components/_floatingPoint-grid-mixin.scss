@@ -1,5 +1,0 @@
-/* Floating point grid */
-@mixin colu($target, $context, $float-direction:left) {
-    width: ($target / $context) * 100%;
-    float: $float-direction;
-}
