@@ -1,3 +1,7 @@
+![](https://img.shields.io/github/release/digi-brains/StreamBuilder.svg?style=flat-square)
+![](https://img.shields.io/github/license/digi-brains/StreamBuilder.svg?style=flat-square)
+![](https://img.shields.io/github/issues/digi-brains/StreamBuilder.svg?style=flat-square)
+
 # StreamBuilder
 
 ## What it is
