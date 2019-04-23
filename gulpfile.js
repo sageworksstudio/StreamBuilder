@@ -2,7 +2,7 @@
  * - - - - - - - - - - EDIT YOUR PATHS
  * - - - - - - - - - - - - - - - - - -
  */
-let paths = {
+const paths = {
         styles: {
             watch   : 'src/scss/**/*.scss',
             dest    : 'dest/css/'
@@ -40,19 +40,20 @@ let paths = {
  * - - - - - - - - - - - - - - - - - - - - -
  */
 
-let prefix      = require ('gulp-autoprefixer'),
-    beeper      = require ('beeper'),
-    browserSync = require ('browser-sync').create (),
-    changed     = require ('gulp-changed'),
-    colors      = require ('ansi-colors'),
-    gulp        = require ('gulp'),
-    log         = require ('fancy-log'),
-    njkRend     = require ('gulp-nunjucks-render'),
-    plumber     = require ('gulp-plumber'),
-    reload      = browserSync.reload ,
-    sass        = require ('gulp-sass'),
-    sourcemaps  = require ('gulp-sourcemaps'),
-    uglify      = require ('gulp-uglify');
+const prefix      = require('gulp-autoprefixer');
+const beeper      = require('beeper');
+const browserSync = require('browser-sync').create ();
+const changed     = require('gulp-changed');
+const colors      = require('ansi-colors');
+const gulp        = require('gulp');
+const log         = require('fancy-log');
+const njkRend     = require('gulp-nunjucks-render');
+const normal      = require('node-normalize-scss');
+const plumber     = require('gulp-plumber');
+const reload      = browserSync.reload;
+const sass        = require('gulp-sass');
+const sourcemaps  = require('gulp-sourcemaps');
+const uglify      = require('gulp-uglify');
 
 
 
@@ -89,7 +90,10 @@ function style(env) {
     if (env !== true) {
         return gulp.src(paths.styles.watch)
         .pipe(sourcemaps.init())
-        .pipe(sass({'outputStyle':'expanded'}))
+        .pipe(sass({
+            includePaths: normal.includePaths,
+            outputStyle: 'expanded'
+        }))
         .pipe(plumber({
               errorHandler : onError
           }))
@@ -103,7 +107,10 @@ function style(env) {
     } else {
         return gulp.src(paths.styles.watch)
         .pipe(sourcemaps.init())
-        .pipe(sass({'outputStyle':'compressed'}))
+        .pipe(sass({
+            includePaths: normal.includePaths,
+            outputStyle: 'compressed'
+        }))
         .pipe(sourcemaps.write('./')) //maps are set relative to source
         .pipe(gulp.dest(paths.styles.dest));
     }
@@ -189,4 +196,5 @@ gulp.task('default', function() {
     image();
     server();
     watch();
+    beeper();
 });
