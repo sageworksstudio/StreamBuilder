@@ -1,6 +1,6 @@
 {
     "name": "StreamBuilder",
-    "version": "2.0.1",
+    "version": "2.1.1",
     "description": "Streaming, front-end build environment for automating mundane tasks.",
     "keywords": [
         "gulp",
