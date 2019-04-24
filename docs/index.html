@@ -1,0 +1,93 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Stream Builder</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style type="text/css">
+            body {margin: auto; max-width: 64em; padding: 1em; font-family: sans-serif;}
+            h1, h2, h3, h4 {color: #4286f4;}
+            code, pre {background-color: #eee; padding: .25em;}
+            pre {background-color: #666; color: #eee; padding: 1em;}
+            a {color: red;}
+        </style>
+    </head>
+    <body>
+        <h1>StreamBuilder</h1>
+
+        <h2>What it is</h2>
+
+        <p>
+            StreamBuilder is an automated build environment well suited for HTML, CSS and JavaScript prototyping. It runs on the (streaming) build system <a href="https://gulpjs.com/">Gulp</a> and comes with goodies like the <a href="https://sass-lang.com/">SASS</a> CSS extension language and the <a href="https://mozilla.github.io/nunjucks/">Nunjucks</a> template language.
+        </p>
+
+        <h2>What it does</h2>
+
+        By working in the <pre>/src</pre> directory all of your changes are piped and rendered to the <pre>/dest</pre> folder.
+
+        <code>
+            /src/scss -> /dest/css
+            /src/js -> /dest/js
+            /src/pages -> /dest/
+            /src/img -> /dest/img
+        </code>
+        <p>
+            It even refreshes your browser on every change!
+        </p>
+
+        <h2>Requirements</h2>
+
+        Requires <a href="https://nodejs.org/">Nodejs</a>
+
+        <h2>Getting Started</h2>
+
+        <ol>
+            <li>Download this repo to your development environment.</li>
+            <li>Install the node modules listed in the package.json file globally. I.e., <pre>sudo npm install -g [node_module]</pre>
+            <li>From a terminal <pre>cd path/to/streambuilder</pre></li>
+            <li>Run <pre>npm install</pre> This will create a new directory "node_modules" where NPM will install all the required node modules.</li>
+            <li>Edit the paths variable in the <pre>gulpfile.js</pre> file to reflect your <pre>src</pre> and <pre>dest</pre> paths as well as your application URL.</li>
+            <li>Run <pre>gulp</pre></li>
+        </ol>
+
+
+        <h2>Production mode</h2>
+
+        <p>
+            By default StreamBuilder runs in development mode and outputs uncompressed CSS and JavaScript. To output compressed files you can run StreamBuilder in production mode. <pre>gulp production</pre> Production mode will not start a server nor will it watch for any changes.
+        </p>
+
+        <h2>Advanced configuration</h2>
+        <p>
+            You can change anything and everything about StreamBuilder by editing the gulpfile.js. By default StreamBuilder compiles everything to the /dest folder. You can chage this behavior (as well as the URL of the project) by editing the <pre>paths</pre> vars in the top of gulpfile.js.
+        </p>
+        <p>
+            StreamBuilder comes bundled with SASS and Nunjucks support. You can change this by removing the gulp-scss modules and installing the css pre-processor and template language of your choice then editing the tasks in gulpfile.js. You can find additional modules at <a href="https://www.npmjs.com/">NPM</a>.
+        </p>
+
+        <h3>Goodies</h3>
+
+        <ul>
+            <li>Out of the box StreamBuilder will create a single page website. Not a very pretty one, but a simple one to get you started.</li>
+            <li>Some handy SASS mixins
+                <ul>
+                    <li>simple-grid() creates a very simple css grid.</li>
+                    <li>simple-flex() for vertical/horizontal placement of block elements.</li>
+                    <li>remCalc() to control font sizes based on the default rem.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p>
+            Instructions for the mixins are in the <pre>/src/scss/components/_mixins.scss</pre> file. And examples are included in the <pre>src/scss/app.scss</pre> and <pre>/src/pages/index.njk</pre> files.
+        </p>
+
+        <h4>Getting Help</h4>
+
+        <p>
+            If you find a bug or want to see a feature, file it in the <a href="https://github.com/digi-brains/StreamBuilder/issues">issues section</a>.
+        </p>
+    </body>
+</html>
