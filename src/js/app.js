@@ -3,7 +3,7 @@
     "use strict";
 
     // Page specific actions
-    var MYSITE = {
+    const MYSITE = {
         common: { // sitewide code
             init: function() {
 
@@ -24,19 +24,18 @@
     };
 
 
-    var UTIL = {
+    const UTIL = {
         exec: function(controller, action) {
-            var ns      = MYSITE,
-                action  = (action === undefined) ? 'init' : action;
-            if (controller !== '' && ns[controller] && typeof ns[controller][action] == 'function' ) {
-                ns[controller][action]();
+            let namespace = MYSITE;
+            action = (action === undefined) ? 'init' : action;
+            if (controller !== '' && namespace[controller] && typeof namespace[controller][action] == 'function' ) {
+                namespace[controller][action]();
             }
         },
-
         init: function() {
-            var main        = document.getElementById('main'),
-                controller  = main.getAttribute( 'data-controller' ),
-                action      = main.getAttribute( 'data-action' );
+            let elm = document.getElementById('main');
+            let controller = elm.getAttribute( 'data-controller' );
+            let action = elm.getAttribute( 'data-action' );
             UTIL.exec( 'common' );
             UTIL.exec( controller );
             UTIL.exec( controller, action );

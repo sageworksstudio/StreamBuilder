@@ -1,6 +1,9 @@
 @import "settings";                 // <-- Set sitewide defaults
 @import "components/mixins";        // Goodies!
 
+html {
+    scroll-behavior: smooth;
+}
 /* Demo */
 body {
     font-family: 'Roboto Condensed', sans-serif;
