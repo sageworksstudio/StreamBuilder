@@ -1,12 +1,7 @@
-@import "normalize";
 
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400');
-
-$rem-base           : 16px;     // Default font rem size
-$font-step          : 0.33333%; // Font size  if using remCalc()
-
-$primary-color      : #6d4c41;
-$primary-text       : #fff;
-
-$secondary-color    : #cddc39;
-$secondary-text     : #000;
+$rem-base        : 16px;     // Default font rem size
+$font-step       : 0.33333%; // Font size  if using remCalc()
+$primary-color   : #6d4c41;
+$primary-text    : #fff;
+$secondary-color : #cddc39;
+$secondary-text  : #000;
