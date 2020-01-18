@@ -5,40 +5,42 @@
     "keywords": [
         "gulp",
         "scss",
-        "sass",
         "node",
         "nunjucks"
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/digi-brains/StreamBuilder"
+        "url": "https://github.com/sageworksstudio/StreamBuilder"
     },
     "author": {
         "name": "Chris Brown",
-        "email": "chris@digitalbrains.io",
-        "url": "https://digitalbrains.io"
+        "email": "chris@sageworksstudio.com",
+        "url": "https://sageworksstudio.com"
     },
-    "homepage": "https://github.com/digi-brains/StreamBuilder",
+    "homepage": "https://github.com/sageworksstudio/StreamBuilder",
     "bugs": {
-        "url": "https://github.com/digi-brains/StreamBuilder/issues",
-        "email": "chris@digitalbrains.io"
+        "url": "https://github.com/sageworksstudio/StreamBuilder/issues",
+        "email": "chris@sageworksstudio.com"
     },
     "license": "MIT",
     "devDependencies": {
-        "beeper": "2.0.0",
-        "browser-sync": "2.26.4",
-        "ansi-colors": "3.2.4",
-        "fancy-log": "1.3.3",
-        "fs-extra": "7.0.1",
-        "gulp": "4.0.1",
-        "gulp-autoprefixer": "6.1.0",
-        "gulp-changed": "3.2.0",
-        "gulp-data": "1.3.1",
-        "gulp-nunjucks-render": "2.2.3",
-        "gulp-plumber": "1.2.1",
-        "gulp-sass": "4.0.2",
-        "gulp-sourcemaps": "2.6.5",
-        "gulp-uglify": "3.0.2",
-        "node-normalize-scss": "8.0.0"
-    }
+        "beeper"                : "2.0.0",
+        "browser-sync"          : "2.26.7",
+        "ansi-colors"           : "4.1.1",
+        "fancy-log"             : "1.3.3",
+        "fs-extra"              : "8.1.0",
+        "gulp"                  : "4.0.2",
+        "gulp-autoprefixer"     : "7.0.1",
+        "gulp-changed"          : "4.0.2",
+        "gulp-data"             : "1.3.1",
+        "gulp-nunjucks-render"  : "2.2.3",
+        "gulp-plumber"          : "1.2.1",
+        "gulp-sass"             : "4.0.2",
+        "gulp-sourcemaps"       : "2.6.5",
+        "gulp-uglify"           : "3.0.2",
+        "node-normalize-scss"   : "8.0.1"
+    },
+    "browserslist": [
+        "defaults"
+    ]
 }
