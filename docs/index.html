@@ -25,13 +25,13 @@
 
         <h2>What it does</h2>
 
-        By working in the <code>/src</code> directory all of your changes are piped and rendered to the <code>/dest</code> folder.
+        By working in the <code>/src</code> directory all of your changes are piped and rendered to the <code>/dist</code> folder.
 
 <pre>
-    /src/scss -> /dest/css
-    /src/js -> /dest/js
-    /src/pages -> /dest/
-    /src/img -> /dest/img
+    /src/scss -> /dist/css
+    /src/js -> /dist/js
+    /src/pages -> /dist/
+    /src/img -> /dist/img
 </pre>
         <p>
             It even refreshes your browser on every change!
@@ -44,11 +44,11 @@
         <h2>Getting Started</h2>
 
         <ol>
-            <li>Download this repo to your development environment.</li>
-            <li>Install the node modules listed in the package.json file globally. I.e., <code>sudo npm install -g [node_module]</code>
+            <li>Download or clone this repo to your development environment.</li>
             <li>From a terminal <code>cd path/to/streambuilder</code></li>
-            <li>Run <code>npm install</code> This will create a new directory "node_modules" where NPM will install all the required node modules.</li>
-            <li>Edit the paths variable in the <code>gulpfile.js</code> file to reflect your <code>src</code> and <code>dest</code> paths as well as your application URL.</li>
+            <li>Install the node modules listed in the package.json file. <code>sudo npm install [node_module]</code></li>
+            <li>Note: you might want to install gulp as a global application <code>sudo npm install -g gulp</code> for Gulp to be visible in your command line.</li>
+            <li>Edit the paths variable in the <code>gulpfile.js</code> file to reflect your <code>src</code> and <code>dist</code> paths as well as your application URL.</li>
             <li>Run <code>gulp</code></li>
         </ol>
 
@@ -61,7 +61,7 @@
 
         <h2>Advanced configuration</h2>
         <p>
-            You can change anything and everything about StreamBuilder by editing the gulpfile.js. By default StreamBuilder compiles everything to the /dest folder. You can chage this behavior (as well as the URL of the project) by editing the <code>paths</code> vars in the top of gulpfile.js.
+            You can change anything and everything about StreamBuilder by editing the gulpfile.js. By default StreamBuilder compiles everything to the /dist folder. You can chage this behavior (as well as the URL of the project) by editing the <code>paths</code> vars in the top of gulpfile.js.
         </p>
         <p>
             StreamBuilder comes bundled with SASS and Nunjucks support. You can change this by removing the gulp-scss modules and installing the css pre-processor and template language of your choice then editing the tasks in gulpfile.js. You can find additional modules at <a href="https://www.npmjs.com/">NPM</a>.
@@ -87,7 +87,7 @@
         <h4>Getting Help</h4>
 
         <p>
-            If you find a bug or want to see a feature, file it in the <a href="https://github.com/digi-brains/StreamBuilder/issues">issues section</a>.
+            If you find a bug or want to see a feature, file it in the <a href="https://github.com/sageworksstudio/StreamBuilder/issues">issues section</a>.
         </p>
     </body>
 </html>

@@ -1,6 +1,6 @@
-![](https://img.shields.io/github/release/digi-brains/StreamBuilder.svg?style=flat-square)
-![](https://img.shields.io/github/license/digi-brains/StreamBuilder.svg?style=flat-square)
-![](https://img.shields.io/github/issues/digi-brains/StreamBuilder.svg?style=flat-square)
+![](https://img.shields.io/github/release/sageworksstudio/StreamBuilder.svg?style=flat-square)
+![](https://img.shields.io/github/license/sageworksstudio/StreamBuilder.svg?style=flat-square)
+![](https://img.shields.io/github/issues/sageworksstudio/StreamBuilder.svg?style=flat-square)
 
 # StreamBuilder
 
@@ -9,12 +9,12 @@ StreamBuilder is an automated build environment well suited for HTML, CSS and Ja
 
 ## What it does
 
-By working in the `/src` directory all of your changes are piped and rendered to the `/dest` folder.
+By working in the `/src` directory all of your changes are piped and rendered to the `/dist` folder.
 
-- `/src/scss` -> `/dest/css`
-- `/src/js` -> `/dest/js`
-- `/src/pages` -> `/dest/`
-- `/src/img` -> `/dest/img`
+- `/src/scss` -> `/dist/css`
+- `/src/js` -> `/dist/js`
+- `/src/pages` -> `/dist/`
+- `/src/img` -> `/dist/img`
 - It even refreshes your browser on every change!
 
-[Documentation](https://digi-brains.github.io/StreamBuilder/)
+[Documentation](https://sageworksstudio.github.io/StreamBuilder/)
